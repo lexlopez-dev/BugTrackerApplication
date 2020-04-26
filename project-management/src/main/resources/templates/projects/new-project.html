@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap core CSS -->
+  <link th:href="@{/vendor/bootstrap/css/bootstrap.min.css}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link th:href="@{/css/formatting.css}" rel="stylesheet">
+  
+  <script src="https://kit.fontawesome.com/80eef9efe1.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div th:fragment="sidenav" class="bg-light border-right" id="sidebar-wrapper">
+      <div class="sidebar-heading"><h1>Bug_Tracker</h1><br></div>
+      <div class="list-group">
+        <a th:href="@{/}" class="list-group-item list-group-item-action bg-light">&nbsp<i class="fas fa-th-large"></i>&nbsp &nbspDashboard Home</a>
+        <a th:href="@{/employees/new}" class="list-group-item list-group-item-action bg-light">&nbsp<i class="fas fa-users"></i>&nbsp &nbspManage Roles</a>
+        <a th:href="@{/projects/new}" class="list-group-item list-group-item-action bg-light current">&nbsp<i class="fas fa-align-justify"></i>&nbsp &nbspManage Projects</a>
+        <a th:href="@{/tickets/new}" class="list-group-item list-group-item-action bg-light">&nbsp<i class="fas fa-list"></i>&nbsp &nbspManage Tickets</a>
+        <a th:href="@{/}" class="list-group-item list-group-item-action bg-light">&nbsp<i class="fas fa-user"></i>&nbsp &nbspUser Profile</a>
+      </div>
+    </div>
+    
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+      <nav th:replace="layouts :: topnav"></nav>
+      
+<!-- --------------------------------------------------------------- -->      
+<!-- ------------------Body of the Page----------------------------- -->
+<!-- --------------------------------------------------------------- -->
+	<br><br>
+      <div class="container-fluid">
+      	<div class="container">
+	
+		<!-- Project Form -->
+		<form class="form-style-9" action="/projects/save" method="POST" th:object="${project}">
+		<ul>
+			<li>
+				<input type="text" class="field-style field-split align-left" placeholder="Project Name" th:field="${project.name}">
+				
+				<select th:field="${project.stage}" class="field-style field-split align-right">
+					<option th:value="NotStarted"> Not Started</option>
+					<option th:value="InProgress"> In Progress</option>
+					<option th:value="Completed"> Completed</option>
+				</select>
+			</li>
+			<li>
+				<select class="field-style field-split align-left" th:field="*{employees}" multiple="multiple">
+					<option th:each = "employee : ${allEmployees}"
+							th:value = "${employee.employeeId}"
+							th:text = "${employee.firstName}">
+					</option>
+				</select>
+			</li>
+			
+			<li>
+				<textarea type="text" class="field-style" placeholder="Enter Project Description" th:field="${project.description}"></textarea>
+			</li>
+			<li>
+				<button type="submit">Create Project</button>
+			</li>
+		</ul>
+		</form>
+		
+		<h3>Projects<br><span>All the projects in your database.</span></h3>
+		<section>
+			<div class="tbl-header">
+			<table cellpadding="0" cellspacing="0" border="0">
+				<thead>
+					<tr>
+						<th>Project Name</th>
+						<th>Project State</th>
+					</tr>
+				</thead>
+				</table>
+				</div>
+				<div class="tbl-content">
+				<table cellpadding="0" cellspacing="0" border="0">
+				<tbody>
+					<tr th:each="aProject : ${projectsList}">
+						<td th:text="${aProject.name}"/>
+						<td th:text="${aProject.stage}"/>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+	</div>
+		 </div>
+      </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+  
+  <!-- /#wrapper -->
+
+	 <!-- Bootstrap core JavaScript -->
+  <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+  <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
+	
+</body>
+
+</html>

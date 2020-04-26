@@ -1,0 +1,282 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template-overviews/simple-sidebar)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+body {
+  overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -16.2rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+  background-color: #e5e5e5;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -16.2rem;
+  }
+}
+
+/**Cards CSS*/
+
+#myPieChart, #myPieChart2, #myPieChart3, #myPieChart4 {
+	background-color: #c5c5c5;
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: .5rem;
+}
+
+.card-title {
+    margin-bottom: .05rem;
+}
+
+/********Navbar left**************/
+
+/**Navbar Links***/
+
+.list-group-item:first-child {
+    border-top-left-radius: .40rem;
+    border-top-right-radius: .40rem;
+}
+
+.list-group-item:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: .40rem;
+    border-bottom-left-radius: .40rem;
+}
+
+.list-group-flush .list-group-item {
+    border-right: 5;
+    border-left: 5;
+    border-radius: .40;
+}
+
+.list-group-item {
+	border-radius: .50rem;
+    position: relative;
+    display: block;
+    padding: .75rem 1.25rem;
+    margin-bottom: 2px;
+    margin-left: 8px;
+    background-color: #fff;
+    border: none;
+}
+
+a.bg-light:focus, a.bg-light:active, button.bg-light:focus, button.bg-light:active, .current {
+    background-color: #2197cf!important;
+}
+
+.current, .list-group a:focus, a:active {
+	color: white;	
+}
+
+/*********Forms CSS*****************/
+.form-style-9{
+	max-width: 450px;
+	background: #FAFAFA;
+	padding: 30px;
+	margin: 50px auto;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	border: 6px solid #305A72;
+}
+.form-style-9 ul{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.form-style-9 ul li{
+	display: block;
+	margin-bottom: 10px;
+	min-height: 35px;
+}
+.form-style-9 ul li  .field-style{
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	padding: 8px;
+	outline: none;
+	border: 1px solid #B0CFE0;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+
+}.form-style-9 ul li  .field-style:focus{
+	box-shadow: 0 0 5px #B0CFE0;
+	border:1px solid #B0CFE0;
+}
+.form-style-9 ul li .field-split{
+	width: 49%;
+}
+.form-style-9 ul li .field-full{
+	width: 100%;
+}
+.form-style-9 ul li input.align-left{
+	float:left;
+}
+.form-style-9 ul li input.align-right{
+	float:right;
+}
+
+.form-style-9 ul li select.align-right{
+	float:right;
+}
+
+.form-style-9 ul li select.align-left{
+	float:left;
+}
+.form-style-9 ul li textarea{
+	width: 100%;
+	height: 100px;
+}
+.form-style-9 ul li button[type="button"], 
+.form-style-9 ul li button[type="submit"] {
+	-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
+	box-shadow: inset 0px 1px 0px 0px #3985B1;
+	background-color: #216288;
+	border: 1px solid #17445E;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	padding: 8px 18px;
+	text-decoration: none;
+	font: 12px Arial, Helvetica, sans-serif;
+}
+.form-style-9 ul li button[type="button"]:hover, 
+.form-style-9 ul li button[type="submit"]:hover {
+	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
+	background-color: #28739E;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #2197cf;
+    border-color: #2197cf;
+}
+
+
+/************************************  Table CSS  *******************************************/
+
+h3{
+    font-size: 17px;
+    color: #f8f8f8;
+    text-transform: none;
+    font-weight: 200;
+    text-align: left;
+    margin: 60px;
+    background: linear-gradient(to right, #ffa447, #ff8912);
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: -75px;
+    margin-top: inherit;
+    position: relative;
+}
+
+h3 span{
+	font-size: 11px;
+	font-weight: 50;
+}
+table{
+  width:100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(255,255,255,0.3);
+  padding:10px;
+ }
+.tbl-content{
+  height:auto;
+  max-height: 300px;
+  overflow-x:auto;
+  margin-top: 0px;
+  border: none;
+  padding: 10px;
+}
+th{
+  padding: 10px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #444444;
+  text-transform: uppercase;
+  border-bottom: solid 2.5px #a0a0a0;
+  padding-top: 30px;
+}
+td{
+  padding: 7px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #6e6e6e;
+  border-bottom: solid 1px #bdbdbd;
+}
+
+
+/* demo styles */
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  /*background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4); */
+  font-family: 'Roboto', sans-serif;
+}
+section{
+  margin: 50px;
+  background-color: #f8f8f8;
+
+}
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
