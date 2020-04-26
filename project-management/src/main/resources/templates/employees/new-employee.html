@@ -79,6 +79,7 @@
 			<tr>
 				<th>Name</th>
 				<th>Role</th>
+				<th>Email</th>
 				<th># of Tickets</th>
 			</tr>
 		</thead>
@@ -89,7 +90,8 @@
 			<tbody>
 				<tr th:each="anEmployeeTicketCnt : ${employeesListTicketsCnt}">
 					<td th:text="${anEmployeeTicketCnt.firstName} + ' ' + ${anEmployeeTicketCnt.lastName}"/>
-					<td th:text="${anEmployeeTicketCnt.lastName}"/>
+					<td th:text="${anEmployeeTicketCnt.role}"/>
+					<td th:text="${anEmployeeTicketCnt.email}"/>
 					<td th:text="${anEmployeeTicketCnt.ticketCount}"/>
 				</tr>
 			</tbody>

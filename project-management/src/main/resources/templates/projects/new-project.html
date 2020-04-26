@@ -84,7 +84,8 @@
 				<thead>
 					<tr>
 						<th>Project Name</th>
-						<th>Project State</th>
+						<th>Status</th>
+						<th>Description</th>
 					</tr>
 				</thead>
 				</table>
@@ -95,6 +96,7 @@
 					<tr th:each="aProject : ${projectsList}">
 						<td th:text="${aProject.name}"/>
 						<td th:text="${aProject.stage}"/>
+						<td th:text="${aProject.description}"/>
 					</tr>
 				</tbody>
 			</table>
