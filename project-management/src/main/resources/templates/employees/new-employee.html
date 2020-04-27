@@ -14,6 +14,7 @@
   <link th:href="@{/css/formatting.css}" rel="stylesheet">
   
   <script src="https://kit.fontawesome.com/80eef9efe1.js" crossorigin="anonymous"></script>
+  
 
 </head>
 
@@ -23,7 +24,7 @@
 
     <!-- Sidebar -->
     <div th:fragment="sidenav" class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading"><h1>Bug_Tracker</h1><br></div>
+      <div class="sidebar-heading"><img src="/images/logo.png" width="215" height="135"><br></div>
       <div class="list-group">
         <a th:href="@{/}" class="list-group-item list-group-item-action bg-light">&nbsp<i class="fas fa-th-large"></i>&nbsp &nbspDashboard Home</a>
         <a th:href="@{/employees/new}" class="list-group-item list-group-item-action bg-light current">&nbsp<i class="fas fa-users"></i>&nbsp &nbspManage Roles</a>
@@ -73,6 +74,7 @@
 	<!-- Table -->
 	<h3>Your Personnel<br><span>All the users in your database.</span></h3>
 	<section>
+	<div class="entire-table">
 	<div class="tbl-header">
 	<table cellpadding="0" cellspacing="0" border="0">
 		<thead>
@@ -97,6 +99,7 @@
 			</tbody>
 		</table>
 	</div>
+	</div>
 	</section>
 		
 	</div>
@@ -112,6 +115,7 @@
 	 <!-- Bootstrap core JavaScript -->
   <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
   <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+  
 
   <!-- Menu Toggle Script -->
   <script>

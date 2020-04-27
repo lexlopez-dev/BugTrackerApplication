@@ -105,32 +105,6 @@
 		  	</div>
 		  	</div>
 		  	</div>
-		  	
-		  	<h3>Your Personnel<br><span>All the users in your database.</span></h3>
-		  	<section>
-				<div class="tbl-header">	  	
-					<table cellpadding="0" cellspacing="0" border="0">
-						<thead>
-							<tr>
-								<th>Title</th>
-								<th>Priority</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-					</table>
-				</div>
-				<div class="tbl-content">
-				<table cellpadding="0" cellspacing="0" border="0">
-					<tbody>
-						<tr th:each="aTicket : ${ticketsList}">
-							<td th:text="${aTicket.title}"/>
-							<td th:text="${aTicket.priority}"/>
-							<td th:text="${aTicket.status}"/>
-						</tr>
-					</tbody>
-				</table>
-				</div>
-			</section>
 		  </div>
 		 </div>
     

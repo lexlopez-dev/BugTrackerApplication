@@ -23,7 +23,7 @@
 
     <!-- Sidebar -->
     <div th:fragment="sidenav" class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading"><h1>Bug_Tracker</h1><br></div>
+      <div class="sidebar-heading"><img src="/images/logo.png" width="215" height="135"><br></div>
       <div class="list-group">
         <a th:href="@{/}" class="list-group-item list-group-item-action bg-light">&nbsp<i class="fas fa-th-large"></i>&nbsp &nbspDashboard Home</a>
         <a th:href="@{/employees/new}" class="list-group-item list-group-item-action bg-light">&nbsp<i class="fas fa-users"></i>&nbsp &nbspManage Roles</a>
@@ -101,13 +101,17 @@
 		
 		<h3>Tickets<br><span>All the tickets in your database.</span></h3>
 		<section>
+		<div class="entire-table">
 			<div class="tbl-header">
 				<table cellpadding="0" cellspacing="0" border="0">
 					<thead>
 						<tr>
 							<th>Title</th>
+							<th>Description</th>
 							<th>Priority</th>
 							<th>Status</th>
+							<th>Type</th>
+							<th>Assigned To</th>
 						</tr>
 					</thead>
 					</table>
@@ -115,14 +119,18 @@
 				<div class="tbl-content">
 				<table cellpadding="0" cellspacing="0" border="0">
 					<tbody>
-						<tr th:each="aTicket : ${ticketsList}">
-							<td th:text="${aTicket.title}"/>
-							<td th:text="${aTicket.priority}"/>
-							<td th:text="${aTicket.status}"/>
+						<tr th:each="aTicketAndEmployee : ${ticketsListAndEmployee}">
+							<td th:text="${aTicketAndEmployee.title}"/>
+							<td th:text="${aTicketAndEmployee.description}"/>
+							<td th:text="${aTicketAndEmployee.priority}"/>
+							<td th:text="${aTicketAndEmployee.status}"/>
+							<td th:text="${aTicketAndEmployee.type}"/>
+							<td th:text="${aTicketAndEmployee.firstName} + ' ' + ${aTicketAndEmployee.lastName}"/>
 						</tr>
 					</tbody>
 				</table>
 			</div>
+		</div>
 		</section>
 		
 	</div>

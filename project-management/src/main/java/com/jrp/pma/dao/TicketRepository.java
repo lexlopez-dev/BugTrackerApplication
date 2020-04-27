@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.jrp.pma.dto.EmployeeTicket;
+import com.jrp.pma.dto.TicketEmployee;
 import com.jrp.pma.dto.TicketPriority;
 import com.jrp.pma.dto.TicketStatus;
 import com.jrp.pma.dto.TicketType;
@@ -15,10 +16,10 @@ public interface TicketRepository extends CrudRepository<Ticket, Long> {
 	@Override
 	public List<Ticket> findAll();
 	
-	@Query(nativeQuery=true, value="SELECT e.first_name as firstName, e.last_name as lastName, COUNT(t.employee_id) as ticketCount " + 
-			"FROM employee e left join ticket t ON t.employee_id = e.employee_id " + 
-			"GROUP BY e.first_name, e.last_name ORDER BY 3 DESC")
-	public List<EmployeeTicket> employeeTickets();
+	@Query(nativeQuery=true, value="SELECT t.title as title,t.description, t.priority, t.status, t.type, e.first_name as firstName, e.last_name as lastName " + 
+			"FROM ticket t left join employee e ON t.employee_id = e.employee_id " + 
+			"GROUP BY t.title ORDER BY 3 DESC")
+	public List<TicketEmployee> ticketsEmployee();
 	
 	
 	@Query(nativeQuery=true, value="SELECT priority as label, COUNT(*) as value " + 

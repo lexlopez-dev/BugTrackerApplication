@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.jrp.pma.dao.EmployeeRepository;
 import com.jrp.pma.dao.ProjectRepository;
 import com.jrp.pma.dao.TicketRepository;
+import com.jrp.pma.dto.TicketEmployee;
 import com.jrp.pma.entities.Employee;
 import com.jrp.pma.entities.Project;
 import com.jrp.pma.entities.Ticket;
@@ -44,6 +45,9 @@ public class TicketController {
 		
 		List<Project> projects = proRepo.findAll();
 		model.addAttribute("projectsList", projects);
+		
+		List<TicketEmployee> ticketAndEmployee = ticketRepo.ticketsEmployee();
+		model.addAttribute("ticketsListAndEmployee", ticketAndEmployee);
 		
 		return "tickets/new-ticket";
 	}

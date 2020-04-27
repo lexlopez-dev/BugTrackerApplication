@@ -11,6 +11,10 @@ body {
     max-width: 1400px;
 }
 
+.navbar{
+	box-shadow: 0 5px 25px -5px rgba(0, 0, 0, 0.35);
+}
+
 #sidebar-wrapper {
   min-height: 100vh;
   margin-left: -16.2rem;
@@ -32,6 +36,7 @@ body {
 #page-content-wrapper {
   min-width: 100vw;
   background-color: #e5e5e5;
+  box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35) inset;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -57,6 +62,7 @@ body {
 
 #myPieChart, #myPieChart2, #myPieChart3, #myPieChart4 {
 	background-color: #c5c5c5;
+	padding: 10px;
 }
 
 .card-body {
@@ -101,6 +107,10 @@ body {
     border: none;
 }
 
+.bg-light {
+    background-color: #ffff!important;
+}
+
 a.bg-light:focus, a.bg-light:active, button.bg-light:focus, button.bg-light:active, .current {
     background-color: #2197cf!important;
 }
@@ -109,15 +119,17 @@ a.bg-light:focus, a.bg-light:active, button.bg-light:focus, button.bg-light:acti
 	color: white;	
 }
 
+
+
 /*********Forms CSS*****************/
 .form-style-9{
 	max-width: 450px;
 	background: #FAFAFA;
-	padding: 30px;
-	margin: 50px auto;
+	padding: 20px;
+	margin: 30px auto;
 	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
-	border-radius: 10px;
-	border: 6px solid #305A72;
+	border-radius: 4px;
+	border: 6px solid #FAFAFA;
 }
 .form-style-9 ul{
 	padding:0;
@@ -135,7 +147,8 @@ a.bg-light:focus, a.bg-light:active, button.bg-light:focus, button.bg-light:acti
 	-moz-box-sizing: border-box; 
 	padding: 8px;
 	outline: none;
-	border: 1px solid #B0CFE0;
+	border: 1px solid #c3c3c3;
+	border-radius: 4px;
 	-webkit-transition: all 0.30s ease-in-out;
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
@@ -171,17 +184,15 @@ a.bg-light:focus, a.bg-light:active, button.bg-light:focus, button.bg-light:acti
 }
 .form-style-9 ul li button[type="button"], 
 .form-style-9 ul li button[type="submit"] {
-	-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
-	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
-	box-shadow: inset 0px 1px 0px 0px #3985B1;
-	background-color: #216288;
-	border: 1px solid #17445E;
+	background-color: #2197cf;
+	border: 1px solid #2197cf;
+	border-radius: 4px;
 	display: inline-block;
 	cursor: pointer;
 	color: #FFFFFF;
 	padding: 8px 18px;
 	text-decoration: none;
-	font: 12px Arial, Helvetica, sans-serif;
+	font-size: 12px;
 }
 .form-style-9 ul li button[type="button"]:hover, 
 .form-style-9 ul li button[type="submit"]:hover {
@@ -220,6 +231,13 @@ h3 span{
 table{
   width:100%;
   table-layout: fixed;
+}
+
+.entire-table{
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	padding: 3px;
+}
+
 }
 .tbl-header{
   background-color: rgba(255,255,255,0.3);
