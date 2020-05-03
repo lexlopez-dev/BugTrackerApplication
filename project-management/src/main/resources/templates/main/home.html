@@ -31,6 +31,7 @@
     <div th:fragment="sidenav" class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading">
       <img src="/images/logo.png" width="215" height="135"><br>
+      <a th:text="${versionNumber}"></a>
       </div>
       <div class="list-group">
         <a th:href="@{/}" class="list-group-item list-group-item-action bg-light current">&nbsp<i class="fas fa-th-large"></i>&nbsp &nbspDashboard Home</a>

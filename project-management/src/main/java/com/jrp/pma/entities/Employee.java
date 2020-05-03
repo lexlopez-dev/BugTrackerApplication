@@ -12,12 +12,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Employee {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@SequenceGenerator(allocationSize=1, name = "employee_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="employee_seq")
 	private long employeeId;
 	
 	private String firstName;

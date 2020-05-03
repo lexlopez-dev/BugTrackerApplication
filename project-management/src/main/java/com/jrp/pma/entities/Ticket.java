@@ -8,12 +8,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Ticket {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@SequenceGenerator(allocationSize=1, name = "ticket_seq")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ticket_seq")
 	private long ticketId;
 	private String title;
 	private String description;

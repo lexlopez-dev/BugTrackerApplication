@@ -18,7 +18,7 @@ public interface TicketRepository extends CrudRepository<Ticket, Long> {
 	
 	@Query(nativeQuery=true, value="SELECT t.title as title,t.description, t.priority, t.status, t.type, e.first_name as firstName, e.last_name as lastName " + 
 			"FROM ticket t left join employee e ON t.employee_id = e.employee_id " + 
-			"GROUP BY t.title ORDER BY 3 DESC")
+			"GROUP BY t.title, t.description, t.priority, t.status, t.type, e.first_name, e.last_name ORDER BY 3 DESC")
 	public List<TicketEmployee> ticketsEmployee();
 	
 	

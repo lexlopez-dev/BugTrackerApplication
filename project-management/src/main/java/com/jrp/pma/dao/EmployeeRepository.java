@@ -14,6 +14,6 @@ public interface EmployeeRepository extends CrudRepository<Employee, Long> {
 	
 	@Query(nativeQuery=true, value="SELECT e.first_name as firstName, e.last_name as lastName, e.email as email, e.role as role, COUNT(t.employee_id) as ticketCount " + 
 			"FROM employee e left join ticket t ON t.employee_id = e.employee_id " + 
-			"GROUP BY e.last_name ORDER BY 3 DESC")
+			"GROUP BY e.last_name, e.first_name, e.email, e.role ORDER BY 3 DESC")
 	public List<EmployeeTicket> employeeTickets();
 }
