@@ -31,8 +31,8 @@ description VARCHAR(500) NOT NULL,
 priority VARCHAR(100) NOT NULL,
 status VARCHAR(100) NOT NULL,
 type VARCHAR(100) NOT NULL,
-project_id BIGINT REFERENCES project,
-employee_id BIGINT REFERENCES employee
+project_id BIGINT NOT NULL,
+employee_id BIGINT NOT NULL
 
 );
 
