@@ -76,6 +76,7 @@
     			</configuration>
 			</plugin>
 		</plugins>
+		<finalName>pma-app-deployment</finalName>
 	</build>
 
 </project>

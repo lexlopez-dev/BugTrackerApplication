@@ -5,7 +5,9 @@ CREATE TABLE IF NOT EXISTS employee (
 employee_id BIGINT NOT NULL DEFAULT nextval('employee_seq') PRIMARY KEY,
 email VARCHAR(100) NOT NULL,
 first_name VARCHAR(100) NOT NULL,
-last_name VARCHAR(100) NOT NULL
+last_name VARCHAR(100) NOT NULL,
+role VARCHAR(100) NOT NULL
+
 
 );
 
@@ -31,8 +33,8 @@ description VARCHAR(500) NOT NULL,
 priority VARCHAR(100) NOT NULL,
 status VARCHAR(100) NOT NULL,
 type VARCHAR(100) NOT NULL,
-project_id BIGINT NOT NULL,
-employee_id BIGINT NOT NULL
+project_id BIGINT REFERENCES project,
+employee_id BIGINT REFERENCES employee
 
 );
 

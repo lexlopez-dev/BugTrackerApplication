@@ -25,9 +25,23 @@ body {
 }
 
 #sidebar-wrapper .sidebar-heading {
-  padding: 0.875rem 1.25rem;
-  font-size: 1.2rem;
+  padding: 0.8rem 1.9rem;
+  width:16rem;
 }
+
+.sidebar-heading h1{
+	font-size:3.1rem;
+	text-decoration:none;
+	border:0;
+	color: #333333;
+	width : 162px;
+ 	padding : 0;
+ 	text-shadow: -3px 3px 0px #ffb506,
+                 -6px 6px 0px #e3e3e3;
+}
+
+
+
 
 #sidebar-wrapper .list-group {
   width: 15rem;
