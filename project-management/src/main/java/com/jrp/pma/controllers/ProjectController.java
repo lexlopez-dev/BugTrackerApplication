@@ -9,12 +9,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.jrp.pma.dao.EmployeeRepository;
-import com.jrp.pma.dao.ProjectRepository;
-import com.jrp.pma.dao.TicketRepository;
+
 import com.jrp.pma.entities.Employee;
 import com.jrp.pma.entities.Project;
 import com.jrp.pma.entities.Ticket;
+import com.jrp.pma.services.EmployeeService;
+import com.jrp.pma.services.ProjectService;
+import com.jrp.pma.services.TicketService;
 
 @Controller
 @RequestMapping("/projects")
@@ -24,13 +25,13 @@ public class ProjectController {
 	private String ver;
 	
 	@Autowired
-	ProjectRepository proRepo;
+	ProjectService proService;
 	
 	@Autowired
-	EmployeeRepository empRepo;
+	EmployeeService empService;
 	
 	@Autowired
-	TicketRepository ticketRepo;
+	TicketService ticketService;
 	
 	@GetMapping("/new")
 	public String displayProjectForm(Model model) {
@@ -38,13 +39,13 @@ public class ProjectController {
 		Project aProject = new Project();
 		model.addAttribute("project", aProject);
 		
-		List<Employee> employees = empRepo.findAll();
+		List<Employee> employees = empService.getAll();
 		model.addAttribute("allEmployees", employees);
 		
-		List<Ticket> tickets = ticketRepo.findAll();
+		List<Ticket> tickets = ticketService.getAll();
 		model.addAttribute("allTickets", tickets);
 		
-		List<Project> projects = proRepo.findAll();
+		List<Project> projects = proService.getAll();
 		model.addAttribute("projectsList", projects);
 		
 		return "projects/new-project";
@@ -54,12 +55,12 @@ public class ProjectController {
 	@PostMapping("/save")
 	public String createProject(Project project, Model model) {
 		//this will handle saving to the DB...
-		proRepo.save(project);
+		proService.save(project);
 		
 		//use a redirect to prevent duplicate submissions
-		return "redirect:/projects/new";
-		
-		
+		return "redirect:/projects/new";	
 	}
+	
+	
 	
 }

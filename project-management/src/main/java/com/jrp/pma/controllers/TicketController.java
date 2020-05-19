@@ -18,6 +18,9 @@ import com.jrp.pma.dto.TicketEmployee;
 import com.jrp.pma.entities.Employee;
 import com.jrp.pma.entities.Project;
 import com.jrp.pma.entities.Ticket;
+import com.jrp.pma.services.EmployeeService;
+import com.jrp.pma.services.ProjectService;
+import com.jrp.pma.services.TicketService;
 
 @Controller
 @RequestMapping("/tickets")
@@ -27,13 +30,13 @@ public class TicketController {
 	private String ver;
 	
 	@Autowired
-	TicketRepository ticketRepo;
+	TicketService ticketService;
 	
 	@Autowired
-	ProjectRepository proRepo;
+	ProjectService proService;
 	
 	@Autowired
-	EmployeeRepository empRepo;
+	EmployeeService empService;
 	
 	@GetMapping("/new")
 	public String displayTicketForm(Model model) {
@@ -41,16 +44,16 @@ public class TicketController {
 		Ticket aTicket = new Ticket();
 		model.addAttribute("ticket", aTicket);
 		
-		List<Ticket> tickets = ticketRepo.findAll();
+		List<Ticket> tickets = ticketService.getAll();
 		model.addAttribute("ticketsList", tickets);
 		
-		List<Employee> employees = empRepo.findAll();
+		List<Employee> employees = empService.getAll();
 		model.addAttribute("allEmployees", employees);
 		
-		List<Project> projects = proRepo.findAll();
+		List<Project> projects = proService.getAll();
 		model.addAttribute("projectsList", projects);
 		
-		List<TicketEmployee> ticketAndEmployee = ticketRepo.ticketsEmployee();
+		List<TicketEmployee> ticketAndEmployee = ticketService.ticketsEmployee();
 		model.addAttribute("ticketsListAndEmployee", ticketAndEmployee);
 		
 		return "tickets/new-ticket";
@@ -59,19 +62,19 @@ public class TicketController {
 	@PostMapping("/save")
 	public String createTicket(Ticket ticket,@RequestParam List<Long> theEmployee,@RequestParam List<Long> theProject, Model model) {
 		//this will handle saving to the DB...
-		ticketRepo.save(ticket);
+		ticketService.save(ticket);
 		
-		Iterable <Employee> chosenEmployee = empRepo.findAllById(theEmployee);
+		Iterable <Employee> chosenEmployee = empService.getAllById(theEmployee);
 		
 		for(Employee emp : chosenEmployee) {
 			emp.setTickets(ticket);
-			empRepo.save(emp);
+			empService.save(emp);
 		}
-		Iterable <Project> chosenProject = proRepo.findAllById(theProject);
+		Iterable <Project> chosenProject = proService.getAllById(theProject);
 		
 		for(Project proj : chosenProject) {
 			proj.setTickets(ticket);
-			proRepo.save(proj);
+			proService.save(proj);
 		}
 		
 		

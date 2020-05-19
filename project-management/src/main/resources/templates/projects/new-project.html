@@ -89,6 +89,7 @@
 						<th>Project Name</th>
 						<th>Status</th>
 						<th>Description</th>
+						<th>Actions</th>
 					</tr>
 				</thead>
 				</table>
@@ -100,6 +101,11 @@
 						<td th:text="${aProject.name}"/>
 						<td th:text="${aProject.stage}"/>
 						<td th:text="${aProject.description}"/>
+						<td>
+		                    <a th:href="@{/edit/{projectId}(projectId=${project.projectId})}">Edit</a>
+		                    &nbsp;&nbsp;&nbsp;
+		                    <a>Delete</a>
+                		</td>
 					</tr>
 				</tbody>
 			</table>

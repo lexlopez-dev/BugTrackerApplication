@@ -107,6 +107,11 @@ public class Project {
 		
 	}
 	
+	// Methods for Editing and Deleting
+	////////////////////////////////////////////////////////////
+	
+
+	
 	
 	
 	
