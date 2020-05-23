@@ -74,6 +74,7 @@
 				<textarea type="text" class="field-style" placeholder="Enter Project Description" th:field="${project.description}"></textarea>
 			</li>
 			<li>
+			<input type="hidden" name="_csrf" th:value="${_csrf.token}" />
 				<button type="submit">Create Project</button>
 			</li>
 		</ul>

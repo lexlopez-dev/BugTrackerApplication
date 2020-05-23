@@ -96,6 +96,8 @@
 				<textarea type="text" class="field-style" placeholder="Enter Ticket Description" th:field="${ticket.description}"></textarea>
 			</li>
 			<li>
+			
+			<input type="hidden" name="_csrf" th:value="${_csrf.token}" />
 				<button type="submit">Create Ticket</button>
 			</li>
 		</ul>
