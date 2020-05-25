@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-import com.jrp.pma.dto.EmployeeTicket;
 import com.jrp.pma.dto.TicketEmployee;
 import com.jrp.pma.dto.TicketPriority;
 import com.jrp.pma.dto.TicketStatus;

@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.jrp.pma.dao.EmployeeRepository;
-import com.jrp.pma.dao.ProjectRepository;
-import com.jrp.pma.dao.TicketRepository;
 import com.jrp.pma.dto.TicketEmployee;
 import com.jrp.pma.entities.Employee;
 import com.jrp.pma.entities.Project;

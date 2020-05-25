@@ -3,6 +3,7 @@ package com.jrp.pma.entities;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,10 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+import javax.validation.constraints.Email;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 
 
 @Entity
@@ -23,9 +28,18 @@ public class Employee {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="employee_seq")
 	private long employeeId;
 	
+	@NotNull
 	private String firstName;
+	
+	@NotNull
 	private String lastName;
+	
+	@NotNull
+	@Email
+	@Column(unique = true)
 	private String email;
+	
+	@NotNull
 	private String role;
 	
 	@ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST},
@@ -33,8 +47,11 @@ public class Employee {
 	@JoinTable(name="project_employee", 
 	joinColumns=@JoinColumn(name="employee_id"),
 	inverseJoinColumns= @JoinColumn(name="project_id"))
+	
+	@JsonIgnore
 	private List<Project> projects;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="theEmployee")
 	private List<Ticket> tickets;
 	
