@@ -51,6 +51,7 @@
 		
 		<!-- Project Form -->
 		<form class="form-style-9" action="/employees/save" method="POST" th:object="${employee}">
+		<input type="hidden" th:field="${employee.employeeId}">
 		<ul>
 		<li>
 			<input type="text" class="field-style field-split align-left" placeholder="First Name" th:field="${employee.firstName}">
@@ -87,6 +88,7 @@
 				<th>Role</th>
 				<th>Email</th>
 				<th># of Tickets</th>
+				<th>Actions</th>
 			</tr>
 		</thead>
 		</table>
@@ -99,6 +101,15 @@
 					<td th:text="${anEmployeeTicketCnt.role}"/>
 					<td th:text="${anEmployeeTicketCnt.email}"/>
 					<td th:text="${anEmployeeTicketCnt.ticketCount}"/>
+					
+					<td>
+		                    <a th:href="@{/employees/update(id=${anEmployeeTicketCnt.employeeId})}"
+		                    class="btn btn-info btn-sm">Edit</a>
+		                    &nbsp;&nbsp;&nbsp;
+		                    <a th:href="@{/employees/delete(id=${anEmployeeTicketCnt.employeeId})}"
+		                    class="btn btn-danger btn-sm"
+		                    onClick="if (!(confirm('Are you sure you want to delete this employee?'))) return false">Delete</a>
+                	</td>
 				</tr>
 			</tbody>
 		</table>

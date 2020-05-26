@@ -24,5 +24,15 @@ public class TicketService {
 	
 	public List<TicketEmployee> ticketsEmployee(){
 		return ticketRepo.ticketsEmployee();
+	}
+
+	public Ticket findByTicketId(long theId) {
+		// TODO Auto-generated method stub
+		return ticketRepo.findByTicketId(theId);
+	}
+
+	public void delete(Ticket theTic) {
+		// TODO Auto-generated method stub
+		ticketRepo.delete(theTic);
 	} 
 }

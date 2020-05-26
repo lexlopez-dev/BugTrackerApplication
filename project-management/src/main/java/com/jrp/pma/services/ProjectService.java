@@ -24,4 +24,14 @@ public class ProjectService {
 	public Iterable<Project> getAllById(List<Long> theProject) {
 		return proRepo.findAll();
 	}
+
+	public Project findByProjectId(long theId) {
+		// TODO Auto-generated method stub
+		return proRepo.findByProjectId(theId);
+	}
+
+	public void delete(Project theProj) {
+		// TODO Auto-generated method stub
+		proRepo.delete(theProj);
+	}
 }

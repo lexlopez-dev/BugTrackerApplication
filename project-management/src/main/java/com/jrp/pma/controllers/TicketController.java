@@ -78,7 +78,34 @@ public class TicketController {
 		
 		//use a redirect to prevent duplicate submissions
 		return "redirect:/tickets/new";
+	}
+	
+	@GetMapping("/update")
+	public String displayTicketUpdateForm(@RequestParam("id")long theId, Model model) {
+		Ticket theTic = ticketService.findByTicketId(theId);
+		model.addAttribute("ticket", theTic);
 		
+		List<Ticket> tickets = ticketService.getAll();
+		model.addAttribute("ticketsList", tickets);
 		
+		List<Employee> employees = empService.getAll();
+		model.addAttribute("allEmployees", employees);
+		
+		List<Project> projects = proService.getAll();
+		model.addAttribute("projectsList", projects);
+		
+		List<TicketEmployee> ticketAndEmployee = ticketService.ticketsEmployee();
+		model.addAttribute("ticketsListAndEmployee", ticketAndEmployee);
+		
+		return "tickets/new-ticket";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteTicket(@RequestParam("id")long theId, Model model) {
+		Ticket theTic = ticketService.findByTicketId(theId);
+		
+		ticketService.delete(theTic);
+		
+		return "redirect:/tickets/new";
 	}
 }

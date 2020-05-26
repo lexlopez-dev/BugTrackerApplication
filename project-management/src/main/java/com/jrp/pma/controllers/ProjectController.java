@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.jrp.pma.entities.Employee;
 import com.jrp.pma.entities.Project;
@@ -59,6 +60,32 @@ public class ProjectController {
 		
 		//use a redirect to prevent duplicate submissions
 		return "redirect:/projects/new";	
+	}
+	
+	@GetMapping("/update")
+	public String displayProjectUpdateForm(@RequestParam("id")long theId, Model model) {
+		Project theProj = proService.findByProjectId(theId);
+		model.addAttribute("project", theProj);
+		
+		List<Employee> employees = empService.getAll();
+		model.addAttribute("allEmployees", employees);
+		
+		List<Ticket> tickets = ticketService.getAll();
+		model.addAttribute("allTickets", tickets);
+		
+		List<Project> projects = proService.getAll();
+		model.addAttribute("projectsList", projects);
+		
+		return "projects/new-project";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteProject(@RequestParam("id")long theId, Model model) {
+		Project theProj = proService.findByProjectId(theId);
+		
+		proService.delete(theProj);
+		
+		return "redirect:/projects/new";
 	}
 	
 	

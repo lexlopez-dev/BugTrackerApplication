@@ -29,6 +29,17 @@ public class EmployeeService {
 
 		public Iterable<Employee> getAllById(List<Long> theEmployee) {
 			return empRepo.findAll();
+		}
+
+		public Employee findByEmployeeId(long theId) {
+			// TODO Auto-generated method stub
+			return empRepo.findByEmployeeId(theId);
+		}
+
+		public void delete(Employee theEmp) {
+			// TODO Auto-generated method stub
+			empRepo.delete(theEmp);
+			
 		} 
 		
 		

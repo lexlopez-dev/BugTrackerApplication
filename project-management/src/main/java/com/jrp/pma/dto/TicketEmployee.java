@@ -1,6 +1,7 @@
 package com.jrp.pma.dto;
 
 public interface TicketEmployee {
+	public long getTicketId();
 	public String getTitle();
 	public String getDescription();
 	public String getPriority();
