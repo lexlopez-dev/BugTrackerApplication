@@ -62,7 +62,7 @@ public class EmployeeController {
 		
 		List<EmployeeTicket> employeesTicketCnt = empService.employeeTickets();
 		model.addAttribute("employeesListTicketsCnt", employeesTicketCnt);
-		return "employees/new-employee"; 
+		return "employees/update-employee"; 
 	}
 	
 	@GetMapping("/delete")

@@ -49,10 +49,9 @@
       	<div class="container">
 		
 		<!-- Project Form -->
-		<button class="btn btn-secondary" onclick="myFunction()">New Employee</button>
-		<br><br>
-		<form id="myDIV" class="form-style-9" action="/employees/save" method="POST" th:object="${employee}">
+		<form id="updateForm" class="form-style-9" action="/employees/save" method="POST" th:object="${employee}">
 		<input type="hidden" th:field="${employee.employeeId}">
+		<h4>Edit Employee</h4>
 		<ul>
 		<li>
 			<input type="text" class="field-style field-split align-left" placeholder="First Name" th:field="${employee.firstName}">
@@ -62,7 +61,7 @@
 		<input type="text" class="field-style field-split align-left" placeholder="Email" th:field="${employee.email}">
 		
 		<select th:field="${employee.role}" class="field-style field-split align-right">
-		    <option value="" selected>-Select Role-</option>
+			<option value="" selected>-Select Role-</option>
 			<option th:value="Admin"> Admin</option>
 			<option th:value="Developer"> Developer</option>
 			<option th:value="Submitter"> Submitter</option>
@@ -72,7 +71,7 @@
 		<li>
 		
 	<!--<input type="hidden" name="_csrf" th:value="${_csrf.token}" /> -->
-		<button type="submit">Add Role</button>
+		<button type="submit">Save Changes</button>
 		</li>
 		</ul>
 		</form>
@@ -140,15 +139,6 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
-    
-    function myFunction() {
-    	  var x = document.getElementById("myDIV");
-    	  if (x.style.display === "block") {
-    	    x.style.display = "none";
-    	  } else {
-    	    x.style.display = "block";
-    	  }
-    	}
   </script>
 	
 </body>

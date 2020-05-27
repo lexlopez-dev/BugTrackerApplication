@@ -76,7 +76,7 @@ public class ProjectController {
 		List<Project> projects = proService.getAll();
 		model.addAttribute("projectsList", projects);
 		
-		return "projects/new-project";
+		return "projects/update-project";
 	}
 	
 	@GetMapping("/delete")

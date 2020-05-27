@@ -48,10 +48,10 @@
       	<div class="container">
 	
 		<!-- Project Form -->
-		<button class="btn btn-secondary" onclick="myFunction()">New Ticket</button>
-		<br><br>
-		<form id="myDIV" action="/tickets/save" class="form-style-9" method="POST" th:object="${ticket}">
+		
+		<form id="updateForm" action="/tickets/save" class="form-style-9" method="POST" th:object="${ticket}">
 		<input type="hidden" th:field="${ticket.ticketId}">
+		<h4>Edit Ticket</h4>
 		<ul>
 			<li>
 				<input type="text" class="field-style field-split align-left" placeholder="Title" th:field="${ticket.title}">
@@ -99,7 +99,7 @@
 			<li>
 			
 		<!--	<input type="hidden" name="_csrf" th:value="${_csrf.token}" />  -->
-				<button type="submit">Create Ticket</button>
+				<button type="submit">Save Changes</button>
 			</li>
 		</ul>
 		</form>
@@ -165,18 +165,6 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
-    
-    function myFunction() {
-  	  var x = document.getElementById("myDIV");
-  	  if (x.style.display === "block") {
-  	    x.style.display = "none";
-  	  } else {
-  	    x.style.display = "block";
-  	  }
-  	}
-    
-    let today = new Date().toISOString().substr(0, 10);
-    document.querySelector("#today").value = today;
   </script>
 	
 </body>

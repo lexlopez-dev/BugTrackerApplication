@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-    max-width: 1400px;
+    max-width: 1600px;
 }
 
 .navbar{
@@ -179,18 +179,20 @@ a.bg-light:focus, a.bg-light:active, button.bg-light:focus, button.bg-light:acti
 	width: 100%;
 }
 .form-style-9 ul li input.align-left{
-	float:left;
+	padding: 4.5px;
 }
 .form-style-9 ul li input.align-right{
 	float:right;
+	padding: 4.5px;
 }
 
 .form-style-9 ul li select.align-right{
 	float:right;
+	padding: 4.5px;
 }
 
 .form-style-9 ul li select.align-left{
-	float:left;
+	padding: 4.5px;
 }
 .form-style-9 ul li textarea{
 	width: 100%;
@@ -220,6 +222,35 @@ a.bg-light:focus, a.bg-light:active, button.bg-light:focus, button.bg-light:acti
     border-color: #2197cf;
 }
 
+a.btn:hover {
+     -webkit-transform: scale(1);
+     -moz-transform: scale(1);
+     -o-transform: scale(1);
+ }
+ a.btn {
+     -webkit-transform: scale(0.8);
+     -moz-transform: scale(0.8);
+     -o-transform: scale(0.8);
+     -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+     -o-transition-duration: 1s;
+ }
+ 
+ .btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+    margin-left: 24px;
+}
+ 
+ #myDIV {
+ 	display: none;
+ }
+ 
+ updateForm{
+ 	display: block;
+ }
+
 
 /************************************  Table CSS  *******************************************/
 
@@ -229,7 +260,7 @@ h3{
     text-transform: none;
     font-weight: 200;
     text-align: left;
-    margin: 60px;
+    margin: 35px;
     background: linear-gradient(to right, #ffa447, #ff8912);
     border-radius: 4px;
     padding: 10px;
@@ -242,6 +273,13 @@ h3 span{
 	font-size: 11px;
 	font-weight: 50;
 }
+
+.h4, h4 {
+    font-size: 1.2rem;
+    color: #000000;
+}
+
+
 table{
   width:100%;
   table-layout: fixed;
@@ -295,9 +333,9 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 section{
-  margin: 50px;
+  margin: 24px;
+  margin-top: 50px;
   background-color: #f8f8f8;
-
 }
 
 

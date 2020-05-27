@@ -97,7 +97,7 @@ public class TicketController {
 		List<TicketEmployee> ticketAndEmployee = ticketService.ticketsEmployee();
 		model.addAttribute("ticketsListAndEmployee", ticketAndEmployee);
 		
-		return "tickets/new-ticket";
+		return "tickets/update-ticket";
 	}
 	
 	@GetMapping("/delete")
