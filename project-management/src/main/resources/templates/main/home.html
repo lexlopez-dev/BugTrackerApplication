@@ -29,9 +29,10 @@
 
     <!-- Sidebar -->
     <div th:fragment="sidenav" class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">
-      <h1>Bug_<br>Tracker</h1><br>
+      <div class="sidebar-heading"><h1>Bug_<br>Tracker</h1>
       </div>
+      <hr style="height:1px;width:90%;border-width:0;color:#adb5bd;background-color:#adb5bd78">
+      
       <div class="list-group">
         <a th:href="@{/}" class="list-group-item list-group-item-action bg-light current">&nbsp<i class="fas fa-th-large"></i>&nbsp &nbspDashboard Home</a>
         <a th:href="@{/employees/new}" class="list-group-item list-group-item-action bg-light">&nbsp<i class="fas fa-users"></i>&nbsp &nbspManage Roles</a>
@@ -66,6 +67,7 @@
 	  				</div>
   				</div>
   			</div>
+  			
   			<div class="col-lg-6 card-columns d-flex justify-content-center">
   				<div class="card mb-3">
   					<canvas id="myPieChart3" height="45" width="67.5"></canvas>
@@ -80,7 +82,8 @@
   				</div>
   				</div>
   			
-		  	</div><br>
+		  	</div>
+		  	<hr style="height:1px;width:90%;border-width:0;color:#adb5bd;background-color:#adb5bd78;margin-top:1px">
 		  	
 		  	<div class="row">
 		  	<div class="col-lg-6 card-columns d-flex justify-content-center">

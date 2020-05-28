@@ -25,12 +25,12 @@ body {
 }
 
 #sidebar-wrapper .sidebar-heading {
-  padding: 0.8rem 1.9rem;
+  padding: 0.2rem 1.9rem;
   width:16rem;
 }
 
 .sidebar-heading h1{
-	font-size:3.1rem;
+	
 	text-decoration:none;
 	border:0;
 	color: #333333;
